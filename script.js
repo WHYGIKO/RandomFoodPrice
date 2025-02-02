@@ -1,22 +1,13 @@
-let users = {};
+let sum = 0;
+let yetkazish = 12000;
+const cart = cartObj();
 
-for (let i = 1; i <= 10; i++) {
-    let name = prompt(`Ismingizni kiriting: `, "User").trim();
-    let age = +prompt(`Yoshingizni kiriting: `, "30").trim();
-
-    if (!name) name = "User";
-    if (!age || isNaN(age)) age = 30;
-    
-    users[i] = {
-        name: name,
-        age: age
-    };
+for (const key in cart) {
+  sum+= cart[key].price
+  sum += yetkazish;
+//   console.log(`Buyurtma: ${Object.keys(cart)}, buyurtma narxi: ${cart[key].price} yetkazib berish narxi: ${yetkazish}. Umumiy narx: ${sum}.`);
 }
 
-for (let id in users) {
-    console.log(`Foydalanuvchi ${id}`);
-    console.log(`Ismingiz: ${users[id].name}`);
-    console.log(`Yoshingiz: ${users[id].age}`);
-}
 
-console.log(users);
+alert(`Sizning buyurtmangiz: ${Object.keys(cart)}. Yetkazib berish bilan bo'lgan umumiy summa: ${sum} sum.`);
+console.log(`Sizning buyurtmangiz: ${Object.keys(cart)}. Yetkazib berish bilan bo'lgan umumiy summa: ${sum} sum.`);
